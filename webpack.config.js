@@ -4,14 +4,19 @@ const webpack = require('webpack');
 module.exports = {
     target: 'electron-renderer',
     entry: [
-        './src/index',
+        home: "./src/home.js",
+	about: "./src/about.js",
+	contact: "./src/contact.js"
     ],
     output: {
         path: path.join(__dirname, 'build'),
         publicPath: path.join(__dirname, 'src'),
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
     },
     module: {
-        rules: []
+        rules: [{
+	    test: /\.css$/,
+	    use: [ 'style-loader', 'css-loader' ]
+	}]
     },
 };
