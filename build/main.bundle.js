@@ -63,14 +63,40 @@
 /******/ 	__webpack_require__.p = "/home/sun/work/talk-electron/src";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-(function webpackMissingModule() { throw new Error("Cannot find module \"./src/index\""); }());
+console.log('running in electron:', __webpack_require__(1));
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+function isRenderer () {
+  // running in a web browser
+  if (typeof process === 'undefined') return true
+
+  // node-integration is disabled
+  if (!process) return true
+
+  // We're in node.js somehow
+  if (!process.type) return false
+
+  return process.type === 'renderer'
+}
+
+module.exports = isRenderer()
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(0);
 
 
 /***/ })

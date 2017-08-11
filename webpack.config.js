@@ -4,9 +4,7 @@ const webpack = require('webpack');
 module.exports = {
     target: 'electron-renderer',
     entry: [
-        home: "./src/home.js",
-	about: "./src/about.js",
-	contact: "./src/contact.js"
+        './src/index',
     ],
     output: {
         path: path.join(__dirname, 'build'),
