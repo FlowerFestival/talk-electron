@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "electron": "electron",
+        "electron": "electron mian.js",
         "packager": "electron-packager ./ tongxin --win --out tongxin --arch=x64 --version=1.7.5 --overwrite --ignore=node_modules"
     },
     "author": "sun",
